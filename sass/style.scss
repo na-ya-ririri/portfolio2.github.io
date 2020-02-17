@@ -1,0 +1,1099 @@
+@charset "utf-8";
+
+@import "1-setting/var";
+@import "2-mixin/mixin";
+@import "3-base/reset";
+
+html, body {
+  font-family: “游ゴシック体”, YuGothic, “游ゴシック Medium”, “Yu Gothic Medium”, “游ゴシック”, “Yu Gothic”, sans-serif;
+  // font-family: 'Montserrat', sans-serif; 英字用
+  font-size: 62.5%;
+}
+.wrap {
+  overflow: hidden; /* 右側の余白消し */
+  @include mqPC {
+    background: $color-key1c;
+  }
+}
+
+/* ---------------------------------------
+index.html
+
+1.header
+2.top
+3.news
+4.news
+5.service
+6.price
+7.comments
+8.q&a
+9.access
+10.contact
+11.footer
+
+component------------------------------
+.heading-black
+.heading-white
+.pc-section
+.link-btn-wrapper
+.link-btn
+.access__more
+---------------------------------------
+
+--------------------------------------- */
+
+/* header------------------------------ */
+// @import "4-page/1-header/header";
+/* ドロワーメニュー(ハンバーガーボタン) */
+.nav-sp {
+  background: $color-nav; /* カンプの見た目の色の値と指定の色の値が異なっていた→見た目の色の値に指定した */
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 68px;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  padding: 0 16px;
+  z-index: 99;
+  .drawer-menu__btn--open {
+    cursor: pointer;
+  }
+} //.nav-sp
+/* ドロワーメニュー(オーバーレイ) */
+.overlay {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: $color-drawer;
+  z-index: 999;
+  display: none; /* jsにて表示、非表示させる */
+} //.overlay
+/* ドロワーメニュー＆Closeボタン */
+.drawer-menu {
+  display: block;
+  width: 300px;
+  height: 100%;
+  background: $color-key3w;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 9999;
+  transform: translateX(300px); /* ドロワーメニューの幅分、右に隠す */
+  transition: ease 0.5s;
+  &.open {
+    transform: translateX(0);
+  }
+  &__list {
+    padding: 197px 100px 0 101px;
+    display: flex;
+    flex-direction: column;
+    &--item {
+      display: inline-block;
+    }
+    .drawer-menu__link {
+      display: inline-block;
+      font-family: 'Montserrat', sans-serif;
+      @include font(1.8rem, 2.2rem, $color-black, 20px);
+      letter-spacing: -0.45px;
+    }
+  } //.drawer-menu__list
+  .drawer-menu__btn--close {
+    position: fixed;
+    top: 23px;
+    right: 318.39px;
+    cursor: pointer;
+    display: none; /* jsにて表示、非表示させる */
+  } //.drawer-menu__btn--close
+} //.drawer-menu
+
+/* グローバルメニュー */
+@include mqSP {
+  .global-menu {
+    display: none;
+  }
+}
+@include mqTAB-MORE {
+  .nav-sp {
+    display: none;
+  }
+  .global-menu {
+    background: $color-global; /* カンプの見た目の色の値と指定の色の値が異なっていた→見た目の色の値に指定した */
+    &__list {
+      display: flex;
+      justify-content: center;
+      padding: 31px 0 30px;
+      height: 80px;
+      &--item {
+        &:not(:last-child) {
+          margin-right: 40px;
+        }
+      }
+      .global-menu__link {
+        font-family: 'Montserrat', sans-serif;
+        @include font(1.6rem, 1.9rem, $color-black, 0);
+        letter-spacing: -0.4px;
+        display: inline-block;
+        position: relative;
+        &::after { /* hoverによる下線の付与 */
+          position: absolute;
+          content: '';
+          display: inline-block;
+          width: 0;
+          height: 1px;
+          bottom: -5px;
+          left: 0;
+          background: $color-black;
+          transition: width 0.25s; /* プロパティを指定する */
+        }
+        &:hover::after {
+          width: 100%;
+        }
+      }
+    } //.global-menu__list
+  } //.global-menu
+}
+/* ------------------------------------ */
+
+/* top--------------------------------- */
+// @import "4-page/2-top/top";
+.top {
+  background: url(../img/2-top/mv.png) center center no-repeat;
+  background-size: cover;
+  height: 667px;
+  position: relative;
+  @include mqSP {
+    background-position: 24%; /* カンプに合わせて位置調整 */
+  }
+  &-text__wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    padding: 0 16px;
+    @include mqPC {
+      top: 220px;
+      left: 733px;
+      transform: translate(0%, 0%);
+      width: 524px;
+    }
+    .top__catch {
+      @include font(2.4rem, 4.5rem, $color-black, 40px);
+      letter-spacing: 0.02px;
+      @include mqPC {
+        @include font(3rem, 4.5rem, $color-black, 40px);
+      }
+    }
+    .top__lead {
+      @include font(1.6rem, 2.6rem, $color-black, 40px);
+      letter-spacing: 0.4px;
+      padding-right: 5px; /* カンプに合わせるため追加 */
+      @include mqPC {
+        @include font(1.8rem, 2.6rem, $color-black, 40px);
+        letter-spacing: 0.45px;
+        padding-right: 0;
+      }
+    }
+    .top__contact-btn-wrapper {
+      @include mqPC {
+        text-align: left;
+      }
+    }
+    .top__contact-btn {
+      @include font(1.8rem, 2.6rem, $color-white, 0);
+      letter-spacing: 0.45px;
+      font-weight: bold;
+      display: inline-block;
+      width: 232px;
+      height: 50px;
+      padding: 13.5px 24px;
+      background: $color-key4o;
+      border-radius: 10px;
+      transition: background-color 0.25s;
+      &:hover {
+        background-color: $color-b-hover;
+      }
+    }
+  } //.top-text__wrapper
+} //.top
+/* ------------------------------------ */
+
+/* news-------------------------------- */
+// @import "4-page/3-news/news";
+.news {
+  background: $color-key1c;
+  padding: 0 16px;
+  &__wrapper {
+    position: relative; /* 本来の位置から */
+    top: -50px; /* topへ移動させる */
+    background: $color-key3w;
+    padding: 0 16px 40px;
+    box-shadow: 0px 5px 12px $color-shadow;
+    @include mqPC {
+      top: 0;
+      padding: 0 50px 40px 50.33px;
+    }
+    .news__heading {
+      @include mqPC {
+        padding: 60px 0;
+      }
+    }
+  } //.news__wrapper
+  &__list {
+    &--item {
+      padding: 13px 47px 16px 16px;
+      border-bottom: 1px solid $color-border;
+      position: relative;
+      transition: background-color 0.25s;
+      @include mqPC {
+        display: flex; /* すべて横並びに */
+        padding: 40px 30px 40px 9.67px;
+      }
+      &:first-child {
+        border-top: 1px solid $color-border;
+      }
+      &:nth-child(n + 4) {
+        display: none; /* jsで「MORE」クリックで表示 */
+      }
+      &::after {
+        position: absolute;
+        content: '';
+        background: url(../img/3-news/news-arrow.svg) no-repeat;
+        width: 15px;
+        height: 30px;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 9.95px;
+      }
+      &:hover {
+        background-color: $color-n-hover;
+        cursor: pointer;
+      }
+      &-SP {
+        display: flex;
+        margin-bottom: 10px;
+        .news__list--item-date {
+          @include font(1.4rem, 2.6rem, $color-black, 0);
+          letter-spacing: 0.35px;
+          margin-right: 20px;
+          @include mqPC {
+            @include font(1.8rem, 2.6rem, $color-black, 0);
+            letter-spacing: 0.45px;
+            margin-right: 60.03px;
+          }
+        }
+        .news__list--item-label {
+          @include font(1.2rem, 2.6rem, $color-black, 0);
+          letter-spacing: 0.3px;
+          display: flex;
+          justify-content: center;
+          align-items: center;;
+          width: 89px;
+          height: 24px;
+          border: 2px solid $color-label;
+          border-radius: 50px;
+          @include mqPC {
+            @include font(1.4rem, 2.6rem, $color-black, 0);
+            letter-spacing: 0.35px;
+            width: 125px;
+            height: 28px;
+            margin-right: 59.97px;
+          }
+        }
+      } //.news__list--item-SP
+      .news__list--item-title {
+        @include font(1.4rem, 2.2rem, $color-black, 0);
+        letter-spacing: -0.35px;
+        @include mqPC {
+          @include font(1.8rem, 2.8rem, $color-black, 0);
+          letter-spacing: 0.45px;
+          max-width: 680px; /* カンプに合わせるため追加 */
+        }
+      }
+    } //.news__list--item
+  } //.news__list
+  &__more {
+    @include font(1.8rem, 2.25rem, $color-black, 0);
+    padding: 16px 121.5px;
+    width: 100%;
+    border: 1px solid $color-link-border;
+    margin-top: 40px;
+    transition: color, background-color 0.25s;
+    @include mqPC {
+      @include font(2rem, 2.25rem, $color-black, 0);
+      padding: 20px 86px;
+      width: 248px;
+    }
+    &:hover {
+      color: $color-white;
+      background-color: $color-key2b;
+    }
+  }
+} //.news
+/* ------------------------------------ */
+
+/* service----------------------------- */
+// @import "4-page/4-service/service";
+.service {
+  padding: 0 16px ;
+  background: linear-gradient($color-key2b 55%, $color-key1c 45%); /* パーセンテージはカンプから計算して割り出した */
+  @include mqPC {
+    padding: 0 203px 130px;
+  }
+  &__list {
+    background: $color-key3w;
+    text-align: center;
+    padding: 40px 16px;
+    box-shadow: 0px 5px 12px $color-shadow;
+    margin-bottom: 60px;
+    @include mqPC {
+      display: flex;
+      justify-content: space-between;
+      padding: 54px 48px 56px;
+    }
+    &--item {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 183px;
+      @include mqPC {
+        width: 231px;
+        height: 211px;
+      }
+      &:not(:last-child) {
+        margin-bottom: 65px;
+        @include mqPC {
+          margin-bottom: 0;
+        }
+      }
+      .service-name {
+        @include font(1.8rem, 2.4rem, $color-black, 0);
+        letter-spacing: 3.6px;
+        @include mqPC {
+          @include font(2rem, 3rem, $color-black, 0);
+          letter-spacing: 4px;
+        }
+      }
+      .service-desp {
+        @include font(1.4rem, 2.4rem, $color-black, 0);
+        letter-spacing: 0.01px;
+        text-align: left;
+      }
+    } //.service__list--item
+  } //.service__list
+} //.service
+/* ------------------------------------ */
+
+/* results----------------------------- */
+// @import "4-page/5-results/results";
+.results {
+  background: $color-key2b;
+  @include mqPC {
+    margin-left: 93px;
+  }
+  .slider-wrapper {
+    padding: 0 0 0 16px; /* スライダーの左側だけに余白 */
+    @include mqPC {
+      padding: 0 0 0 110px;
+    }
+    .slick-dots { /* [slick]ページネーションの親クラス(ul) */
+      margin-bottom: 40px; /* ★←だけでは位置がうまく行かないので、↓.sliderのmargin-bottomに40pxを追加した */
+      @include mqPC {
+        margin-bottom: 48px;
+        text-align: left; /* これで左寄せ */
+      }
+      & li button:before {
+        font-size: 12px;
+        color: $color-key3w;
+      }
+      & li.slick-active button::before {
+        border: 1px solid $color-key3w;
+        border-radius: 50%;
+      }
+    }
+    .slick-list { /* [slick]スライダー全体のクラス */
+      padding: 0 17% 0 0; /* ★次のスライドの見切れ具合 */
+      @include mqPC {
+        padding: 0 60.5% 0 0;
+      }
+    } //.slick-list
+    .slider {
+      margin: 0 24.05px 64px 0; /* ★スライダー同士の幅と、スライダーからページネーションとの間隔(24px)＋ページネーションから「VIEW ALL」との間(40px) */
+      @include mqPC {
+        margin: 0 40px 96px 0; /* 48px + 48px */
+      }
+      .slider-item {
+        width: 100%; /* 画像下の説明文の幅と合うように必要 */
+        max-width: 100%;
+      } //.slider-item
+      .slide-text {
+        background: $color-key3w;
+        padding: 12px 12.03px 11.96px 12px;
+        @include mqPC {
+          padding: 20px;
+        }
+        .slide-title {
+          @include font(1.5rem, 1.3rem, $color-black, 12px);
+          letter-spacing: 0.01px;
+          @include mqPC {
+            @include font(2rem, 2.4rem, $color-black, 20px);
+          }
+        }
+        .slide-desp {
+          @include font(1.2rem, 2rem, $color-black, 0);
+          letter-spacing: 0.01px;
+          @include mqPC {
+            @include font(1.6rem, 2.4rem, $color-black, 0);
+          }
+        }
+      } //.slide-text
+    } //.slick-slide
+  } //.slick-wrapper
+  .results__more-wrapper {
+    padding: 0 16px; /* スライダー位置の関係でセクション全体に対して余白をかけられなかったためこちらで指定 */
+    @include mqPC {
+      text-align: left;
+      padding-left: 110px;
+    }
+    .results__more {
+      @include font(1.8rem, 2.3rem, $color-white, 0);
+      padding: 16px 0; /* カンプ通り左右113.5pxを入れると改行されてしまう */
+      width: 100%;
+      border: 1px solid $color-key3w;
+      margin-bottom: 40px;
+      transition: color, background-color 0.25s;
+      @include mqPC {
+        @include font(2rem, 2.25rem, $color-white, 0);
+        width: 301px;
+        margin-bottom: 80px;
+      }
+      &:hover {
+        color: $color-black;
+        background-color: $color-key3w;
+      }
+    }
+  } //.results__more-wrapper
+} //.results
+/* ------------------------------------ */
+
+/* price------------------------------- */
+// @import "4-page/6-price/price";
+.price {
+  background: $color-key1c;
+  padding: 0 16px 120px;
+  @include mqPC {
+    padding: 0 203px 281px;
+  }
+  &-table {
+    font-family: 'Montserrat', sans-serif;
+    border: 1px solid $color-table-border;
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 14px;
+    @include mqPC {
+      margin-bottom: 24px;
+    }
+    tr {
+      height: 60.5px;
+      @include mqPC {
+        height: 60px;
+      }
+      &:not(:last-child) {
+        border-bottom: 1px solid $color-table-border;;
+      }
+    }
+    /* font-sizeがカンプに記載がなかったので自分で設定↓ */
+    th {
+      @include font(1.8rem, 2.3rem, $color-white, 0);
+      font-weight: bold;
+      background: $color-key2b;
+      vertical-align: middle;
+      @include mqPC {
+        @include font(2.2rem, 2.3rem, $color-white, 0);
+      }
+    }
+    td {
+      @include font(1.8rem, 2.3rem, $color-black, 0);
+      font-weight: bold;
+      background: $color-key3w;
+      vertical-align: middle;
+      padding-left: 20px;
+      @include mqPC {
+        @include font(2.2rem, 2.3rem, $color-black, 0);
+      }
+    }
+  }//.price-table
+  &-text {
+    @include font(1.2rem, 2rem, $color-black, 0);
+  } //.price-text
+} //.price
+/* ------------------------------------ */
+
+/* comments---------------------------- */
+// @import "4-page/7-comments/comments";
+.comments {
+  background: $color-key2b;
+  padding: 0 16px;
+  @include mqPC {
+    padding: 0 93px;
+    background: linear-gradient(to right, $color-key2b 72%, $color-key1c 28%); /* カンプから自分で計算 */
+  }
+  &__flex-wrapper { /* PCカンプ用 */
+    position: relative;
+    top: -60px;
+    @include mqPC {
+      top: -150px;
+      display: flex;
+    }
+  } //.comments__flex-wrapper
+  &__wrapper {
+    background: $color-key3w;
+    padding: 0 20px 40.01px; /* top:40pxはheadingで担保 */
+    // position: relative; ここに指定してしまうとPCカンプ時にある隣の画像との位置調整がうまく行かなくなるため.comments__flex-wrapperを追加してそちらに記載
+    // top: -60px;
+    @include mqPC {
+      padding: 0 40px 120px;
+      box-shadow: 0px 0px 10px $color-com-shadow;
+    }
+    .comments__heading {
+      text-align: left;
+    } //.comments__heading
+    .comments__list {
+      &--item {
+        display: flex;
+        justify-content: space-between;
+        &:not(:last-child) {
+          margin-bottom: 30.01px;
+          @include mqPC {
+            margin-bottom: 76px;
+          }
+        }
+        .comment-img {
+          width: 100%; /* ないと比率がおかしくなる */
+          height: 100%;
+          max-width: 100px; /* ないと大きくなりすぎる */
+          max-height: 100px;
+          min-width: 56px; /* スマホカンプサイズ */
+          min-height: 56px;
+          margin-right: 24.03px;
+          @include mqPC {
+            margin-right: 50px;
+          }
+        }
+        .comment {
+          @include font(1.4rem, 2.2rem, $color-black, 0);
+          @include mqPC {
+            @include font(1.6rem, 2.6rem, $color-black, 0);
+          }
+        }
+      } //.comments__list--item
+    } //.comments__list
+  } //.comments__wrapper
+  &-img-group {
+    display: none;
+    @include mqPC {
+      display: block;
+      width: 100%;
+      max-width: 100%;
+      margin: 126px 0 40px;
+    }
+  } //.comments-img-group
+} //.comments
+/* ------------------------------------ */
+
+/* q&a--------------------------------- */
+// @import "4-page/8-q&a/faqs";
+.faqs {
+  background: url(../img/8-q&a/sunyu-kim-1053375-unsplash.png) center, center, no-repeat;
+  background-size: cover;
+  &__wrapper {
+    padding: 0 16px 40px;
+    @include mqPC {
+      padding: 0 0 60px;
+    }
+  } //.faqs__wrapper
+  &__list {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    @include mqPC {
+      padding: 0 109.5px 0 640.5px;
+    }
+    &--item {
+      @include font(1.6rem, 2.6rem, $color-black, 0);
+      background: $color-key3w;
+      border-radius: 7px;
+      padding: 22px 18px 18px;
+      &:not(:last-child) {
+        margin-bottom: 30px;
+      }
+      cursor: pointer;
+      .faqs__q {
+        letter-spacing: 0.4px;
+        padding-left: 39px;
+        position: relative;
+        &::before {
+          position: absolute;
+          content: 'Q';
+          left: 0;
+          width: 26px;
+          height: 26px;
+          @include font(1.6rem, 1.9rem, $color-white, 0);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background: $color-faqs-q;
+          border-radius: 50%;
+        }
+        &::after {
+          position: absolute;
+          content: '';
+          background: url(../img/8-q&a/plus.svg) no-repeat;
+          width: 15px;
+          height: 15px;
+          top: 50%;
+          transform: translateY(-50%);
+          right: 1px;
+        }
+        &.open::after {
+          background: url(../img/8-q&a/minus.svg) no-repeat;
+          top: 20px;
+        }
+      }
+      .faqs-a__wrapper {
+        display: none; /* jsで表示、非表示させる */
+        padding: 18px 14px;
+        background: $color-faqs-a;
+        border-radius: 7px;
+        margin-top: 19px;
+      }
+    } //.faqs__list--item
+  } //.faqs__list
+} //.faqs
+/* ------------------------------------ */
+
+/* access------------------------------ */
+// @import "4-page/9-access/access";
+.access {
+  background: $color-key2b;
+  padding: 0 16px 40px;
+  @include mqPC {
+    padding: 80px 92px 130px 93px;
+    background: linear-gradient(to right, $color-key2b 72%, $color-key1c 28%) top/ 100% 70% no-repeat; /* https://arts-factory.net/linear-gradient/ を参考に調整 */
+  }
+  &__flex-wrapper {
+    @include mqPC {
+      display: flex;
+    }
+  } //.access__flex-wrapper
+  .access__heading {
+    text-align: left;
+    padding-bottom: 39px;
+    @include mqPC {
+      padding: 0 0 40px 0; /* accessセクションのみ位置調整ためheadingにpadding上下に80pxはつけない */
+    }
+  } //.access__heading
+  &__desp {
+    @include font(1.2rem, 2.4rem, $color-white, 19px);
+    @include mqPC {
+      @include font(1.6rem, 2.6rem, $color-white, 40px);
+      width: 210px; /* ないと改行してしまう */
+    }
+  } //.access__desp
+  .access__map-wrapper {
+    width: 100%;
+    margin: 0 auto;
+    @include mqPC {
+      margin-left: 135px; /* Mapボタンとの距離 */
+      box-shadow: 0px 0px 10px $color-m-shadow;
+    }
+    .access__map {
+      position: relative;
+      height: 0;
+      padding-top: 73.5%;
+      overflow: hidden;
+      margin-bottom: 40px;
+      @include mqPC {
+        margin-bottom: 0;
+      }
+      iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  } //.access__map-wrapper
+  .access__more-sp {
+    @include mqPC {
+      display: none;
+    }
+  }
+  .access__more-pc {
+    width: 326px;
+    height: 64px;
+    padding: 20px 0;
+    @include mqSP {
+      display: none;
+    }
+    @include mqTAB {
+      display: none;
+    }
+  }
+} //.access
+/* ------------------------------------ */
+
+/* contact----------------------------- */
+// @import "4-page/10-contact/contact";
+.contact {
+  background: url(../img/10-contact/alex-blajan-159378-unsplash.png);
+  background-size: cover;
+  padding: 40px 16px;
+  @include mqPC {
+    padding: 80px 203px 80.5px;
+  }
+  &__wrapper {
+    background: $color-key3w;
+    border-radius: 12px;
+    box-shadow: 0px 3px 6px $color-c-shadow;
+    &--title {
+      background: url(../img/10-contact/contact1.png) center center no-repeat;
+      /* background-size: cover; これがあるとSP時に画像上部に謎の余白が発生してしまう*/
+      padding: 32px 16px 36px;
+      border-radius: 12px 12px 0 0 ;
+      @include mqPC {
+        padding: 61.5px 240px;
+        text-align: center;
+        background-size: 102%; /* これがないと両端に謎の余白ができてしまう */
+      }
+      .contact__heading {
+        @include font(3rem, 2.25rem, $color-white, 20px);
+        text-align: center;
+        font-family: 'Montserrat', sans-serif;
+        @include mqPC {
+          @include font(3.6rem, 2.25rem, $color-white, 12px);
+        }
+      }
+      .contact__text {
+        @include font(1.4rem, 2.6rem, $color-white, 0);
+        @include mqPC {
+          @include font(1.6rem, 2.25rem, $color-white, 0);
+        }
+      }
+    } //.contact__wrapper--title
+    .contact__wrapper--form {
+      padding: 40px 16px;
+      @include mqPC {
+        padding: 60px 90px;
+      }
+      .contact-form {
+        @include font(1.6rem, 2.25rem, $color-black, 0);
+        @include mqPC {
+          @include font(2.2rem, 2.25rem, $color-black, 0);
+        }
+        .m-bottom {
+          margin-bottom: 40px;
+          @include mqPC {
+            margin-bottom: 42px;
+            // display: flex;
+          }
+        } //.m-bottom
+        .contact__flex-wrapper {
+          @include mqPC {
+            display: flex;
+            justify-content: space-between;
+          }
+        } //.contact__flex-wrapper
+        .label__flex-wrapper-sp {
+          @include mqPC {
+            display: none;
+          }
+        } //.label__flex-wrapper-sp
+        .label__flex-wrapper-pc {
+          @include mqSP {
+            display: none;
+          }
+          @include mqTAB {
+            display: none;
+          }
+          @include mqPC {
+            display: flex;
+            justify-content: space-between;
+            width: 780px; /* 必要 */
+          }
+        } //.label__flex-wrapper-pc
+        .contact-title {
+          display: inline-block;
+          margin-bottom: 10px;
+          @include mqPC {
+            margin-bottom: 0;
+            margin-top: 4px; /* 入力欄と高さを合わせるために追加 */
+          }
+        } //.contact-title
+        .contact-title-p {
+          margin-bottom: 10px;
+          @include mqPC {
+            margin-bottom: 0;
+            margin-top: 4px; /* 入力欄と高さを合わせるために追加 */
+          }
+        }
+        .contact-title-m {
+          margin-bottom: 10px;
+        }
+        .inputs-type {
+          @include font(1.6rem, 2.3rem, $color-b-text, 0);
+          border: 1px solid $color-c-border;
+          height: 32px;
+          padding: 5.5px 0 5.5px 10px;
+          transition: box-shadow 0.25s;
+          @include mqPC {
+            @include font(1.8rem, 2.25rem, $color-b-text, 0);
+            width: 261px;
+            margin-right: 244px;
+          }
+          &:hover {
+            box-shadow: 0px 0px 5px $color-c-hover;
+          }
+        } //.inputs-type
+        .inputs-text {
+          border: none;
+          border-bottom: 1px solid $color-c-border;
+          height: 23.5px;
+          @include placeholder;
+          transition: box-shadow 0.25s;
+          @include mqPC {
+            width: 505px; /* space-betweenを効かせるため */
+            height: 29.5px;
+            padding-left: 10px;
+          }
+          &:hover {
+            box-shadow: 0px 5px 5px -5px $color-c-hover; /* 一方向だけに影 http://chroma.hatenablog.com/entry/2013/09/25/172809 */
+            border-bottom: 1px solid $color-c-hover;
+          }
+        } //.inputs-text
+        .must-label {
+          display: inline-block;
+          width: 50px;
+          height: 22px;
+          @include font(1.4rem, 2.25rem, $color-white, 0);
+          background: $color-key6r;
+          border-radius: 5px;
+          text-align: center;
+          margin-left: 15px;
+          @include mqPC {
+            width: 55px;
+            height: 24px;
+            @include font(1.6rem, 2.25rem, $color-white, 0);
+            margin-right: 80px;
+          }
+        } //.must-label
+        .inputs-content {
+          height: 160px;
+          @include mqPC {
+            height: 213px;
+          }
+        } //.inputs-content
+        .inputs-radio {
+          & + span {
+            margin: 0 95px 0 0; /* 各項目の右側の余白 */
+            padding: 0 0 0 25px; /* ○と項目の間の余白 */
+          }
+          & + span::before {
+            border: 1px solid $color-c-border;
+            width: 12px;
+            height: 12px;
+          }
+          & + span::after {
+            background: $color-radio;
+            width: 6px;
+            height: 6px;
+            left: 2px;
+            padding: 3px; /* ●と○の間 */
+            transition: opacity 0.1s ease 0s;
+          }
+        } //.inputs-radio
+        .radio__flex-wrapper {
+          @include mqPC {
+            width: 505px; /* space-betweenを効かせるため */
+          }
+        }
+        .inputs-content {
+          border: 1px solid $color-c-border;
+          transition: box-shadow 0.25s;
+          &:hover {
+            box-shadow: 0px 0px 5px $color-c-hover;
+            border: 1px solid $color-c-hover;
+          }
+        } //.inputs-content
+        .privacy-text {
+          padding: 0 0 20.5px 40px;
+          @include mqPC {
+            padding-bottom: 30px;
+          }
+        } //.privacy-text
+        .privacy-text, .privacy-content {
+          @include font(1.6rem, 2.25rem, $color-black, 0);
+          @include mqPC {
+            @include font(1.8rem, 2.25rem, $color-black, 0);
+          }
+        } //.privacy-text, .privacy-content
+        .inputs-checkbox {
+          & + span {
+            padding: 0 0 0 20px; /* □と文章(項目)の間の余白 */
+          }
+          & + span::before {
+            border: 1px solid $color-c-border;
+            width: 18px;
+            height: 18px;
+            top:7px;
+            @include mqPC {
+              width: 20px;
+              height: 20px;
+              top: 5px;
+            }
+          }
+          & + span::after { /* ✓自作 */
+            border-left: 2px solid $color-check;
+            border-bottom: 2px solid $color-check;
+            transform: rotate(-45deg);
+            left: 3px;
+            top: 13px;
+            width: 12px;
+            height: 8px;
+            transition: opacity 0.1s ease 0s;
+            @include mqPC {
+              transform: rotate(-44deg);
+              width: 14px;
+              height: 10px;
+            }
+          }
+        } //.inputs-checkbox
+        .contact-form__button {
+          @include mqPC {
+            text-align: left;
+          }
+        }
+        .submit-btn {
+          display: inline-block;
+          @include font(1.8rem, 2.6rem, $color-white, 0);
+          letter-spacing: 0.45px;
+          background-color: $color-key4o;
+          border-radius: 10px;
+          box-shadow: 0px 3px 6px $color-c-shadow2;
+          padding: 13.5px 0;
+          width: 121px;
+          height: 50px;
+          transition: background-color 0.25s;
+          @include mqPC {
+            width: 174px;
+          }
+          &:hover {
+            background-color: $color-b-hover;
+          }
+        } //.submit-btn
+      } //.contact-form
+    } //.contact__wrapper--form
+  } //.contact__wrapper
+} //.contact
+/* ------------------------------------ */
+
+/* footer------------------------------ */
+// @import "4-page/11-footer/footer";
+@font-face {
+  font-family: "baFBdBold";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../BerlinSansFBDemiBold/BerlinSansFBDemiBold.ttf");
+}
+
+.footer {
+  background: $color-key2b;
+  padding: 60px 39px 92px 32px;
+  text-align: center;
+  @include mqPC {
+    padding: 120px 93px 119.5px;
+    display: flex;
+    justify-content: space-between;
+  }
+  &__sns {
+    margin-bottom: 40px;
+    @include mqPC {
+      text-align: left;
+      margin-bottom: 43.4px;
+    }
+    .sns-link {
+      &:not(:last-child) {
+        margin-right: 132px;
+        @include mqPC {
+          margin-right: 20px;
+        }
+      }
+    }
+    .sns-icon { /* font awesomeへのス指定 */
+      font-size: 3.6rem;
+      color: $color-key3w;
+    }
+  } //.footer__sns
+  &__link {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-bottom: 20px;
+    @include mqPC {
+      display: inline-block;
+      text-align: left;
+    }
+    &--item {
+      @include mqPC {
+        margin-bottom: 20px;
+      }
+    }
+    .footer-link {
+      @include font(1.4rem, 2.6rem, $color-white, 0);
+      letter-spacing: 0.35px;
+      @include mqPC {
+        @include font(1.8rem, 2.6rem, $color-white, 0);
+        letter-spacing: 0.45px;
+      }
+    }
+  } //.footer__link
+  &__company {
+    @include mqPC {
+      padding: 43px 9px 84px 0;
+    }
+    &--name {
+      font-family: 'baFBdBold', sans-serif;
+      @include font(3rem, 7.7rem, $color-footer, 8px); /* フォントを変更したため3.44rem→3rem */
+      @include mqPC {
+        @include font(4.4rem, 7.7rem, $color-footer, 18px);
+      }
+    }
+    .cp-right {
+      font-family: 'Montserrat', sans-serif;
+      @include font(1.2rem, 1.5rem, $color-white, 0);
+      letter-spacing: 0.3px;
+      @include mqPC {
+        text-align: right;
+      }
+    }
+  } //.footer__company
+  &__top-link {
+    position: fixed; /* 画面右下に固定 */
+    right: 16px;
+    bottom: 16px;
+    display: none; /* jsでスクロールしたらふわっと表示、非表示させる */
+    @include mqPC {
+      right: 93px;
+      bottom: 38.5px;
+    }
+  }
+} //.footer
+/* ------------------------------------ */
+
+/* component--------------------------- */
+@import "4-page/component/component";
+/* ------------------------------------ */

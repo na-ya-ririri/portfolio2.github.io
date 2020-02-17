@@ -1,0 +1,67 @@
+@charset "utf-8";
+
+
+.heading-black {
+  font-family: 'Montserrat', sans-serif;
+  @include font(3rem, 3.7rem, $color-black, 0);
+  text-align: center;
+  padding: 40px 0;
+  @include mqPC {
+    @include font(3.6rem, 4.4rem, $color-black, 0);
+    padding: 80px 0;
+  }
+}
+.heading-white {
+  font-family: 'Montserrat', sans-serif;
+  @include font(3rem, 3.7rem, $color-white, 0);
+  text-align: center;
+  padding: 40px 0;
+  @include mqPC {
+    @include font(3.6rem, 4.4rem, $color-white, 0);
+    padding: 80px 0;
+  }
+}
+
+.pc-section {
+  @include mqTAB {
+    padding: 130px 93px;
+  }
+  @include mqPC {
+    padding: 130px 93px;
+  }
+}
+
+.link-btn-wrapper {
+  text-align: center;
+}
+.link-btn {
+  display: inline-block;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  letter-spacing: 3.6px;
+  background: transparent;
+  cursor: pointer;
+  height: 54px;
+  @include mqPC {
+    letter-spacing: 4px;
+    height: 64px;
+  }
+}
+
+.access__more { /* link-btnのスタイルが効かなかったので別クラス付与 */
+  display: inline-block;
+    font-family: 'Montserrat', sans-serif;
+    @include font(1.8rem, 2.25rem, $color-white, 0);
+    letter-spacing: 1.8px;
+    font-weight: bold;
+    background: transparent;
+    border: 1px solid $color-key3w;;
+    padding: 16px 0;
+    width: 100%;
+    height: 54px;
+    transition: color, background-color 0.25s;
+    &:hover {
+      color: $color-black;
+      background-color: $color-key3w;
+    }
+}

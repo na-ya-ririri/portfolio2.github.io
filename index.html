@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <!-- サイト説明文とキーワード -->
+  <meta name="description" content="30DAYSトライアル2ndの最終課題です">
+  <meta name="keywords" content="プログラミング初心者,30DAYSトライアル,最終課題">
+  <!-- form reset CSS -->
+  <link rel="stylesheet" href="css/form_reset.css">
+  <!-- style CSS -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Google Fonts Montserrat -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
+  <!-- font awesome CDN -->
+  <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+
+  <!-- slick CSS CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1/slick/slick.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1/slick/slick-theme.min.css">
+
+  <title>デイトラ2nd最終課題</title>
+</head>
+<body>
+  <div class="wrap">
+
+    <header id="site-top">
+      <!-- drawer open -->
+      <div class="nav-sp">
+        <a href="#site-top" class="nav__logo"><img src="img/1-header/SP/logo.png" alt="HANIWAMAN Corp."></a>
+        <img src="img/1-header/SP/hamburger.svg" alt="open menu" class="drawer-menu__btn--open">
+      </div>
+      <!-- drawer overlay& menu& close -->
+      <span class="overlay"></span>
+      <div class="drawer-menu">
+        <ul class="drawer-menu__list">
+          <li class="drawer-menu__list--item"><a href="#news" class="drawer-menu__link t-minus-n">News</a></li>
+          <li class="drawer-menu__list--item"><a href="#service" class="drawer-menu__link">Service</a></li>
+          <li class="drawer-menu__list--item"><a href="#results" class="drawer-menu__link">Results</a></li>
+          <li class="drawer-menu__list--item"><a href="#price" class="drawer-menu__link">Price</a></li>
+          <li class="drawer-menu__list--item"><a href="#comments" class="drawer-menu__link t-minus-c">Comments</a></li>
+          <li class="drawer-menu__list--item"><a href="#faqs" class="drawer-menu__link">FAQs</a></li>
+          <li class="drawer-menu__list--item"><a href="#access" class="drawer-menu__link">Access</a></li>
+          <li class="drawer-menu__list--item"><a href="#contact" class="drawer-menu__link">Contact</a></li>
+        </ul>
+        <div class="drawer-menu__btn--close">
+          <img src="img/1-header/SP/batsu.svg" alt="close menu">
+        </div>
+      </div>
+
+      <!-- global menu -->
+      <nav class="global-menu">
+        <ul id="current-nav" class="global-menu__list">
+          <li class="global-menu__list--item"><a href="#news" class="global-menu__link">News</a></li>
+          <li class="global-menu__list--item"><a href="#service" class="global-menu__link">Service</a></li>
+          <li class="global-menu__list--item"><a href="#results" class="global-menu__link">Results</a></li>
+          <li class="global-menu__list--item"><a href="#price" class="global-menu__link">Price</a></li>
+          <li class="global-menu__list--item"><a href="#comments" class="global-menu__link">Comments</a></li>
+          <li class="global-menu__list--item"><a href="#faqs" class="global-menu__link">FAQs</a></li>
+          <li class="global-menu__list--item"><a href="#access" class="global-menu__link">Access</a></li>
+          <li class="global-menu__list--item"><a href="#contact" class="global-menu__link">Contact</a></li>
+        </ul>
+      </nav>
+
+    </header>
+
+    <!-- top -->
+    <section class="top">
+      <div class="top-text__wrapper">
+        <h1 class="top__catch">
+          <span class="top__catch-1">詩が生れて、画が出来る。</span><br>
+          <span class="top__catch-2">とかくに人の世は住みにくい。</span>
+        </h1>
+        <p class="top__lead">
+          どこへ越しても住みにくいと悟った時、詩が生れて、画が出来る。意地を通せば窮屈だ。
+        </p>
+        <div class="top__contact-btn-wrapper link-btn-wrapper">
+          <a href="#contact" class="top__contact-btn">お問い合わせしてみる</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- news -->
+    <section id="news" class="pc-section news">
+      <div class="news__wrapper">
+        <h2 class="heading-black news__heading">News</h2>
+        <ul class="news__list">
+          <li class="news__list--item">
+            <div class="news__list--item-SP">
+              <time datetime="2019-02-01" class="news__list--item-date">2019-02-01</time>
+              <p class="news__list--item-label">テキスト</p>
+            </div>
+            <p class="news__list--item-title">ニュースニュースニュースニュースニュースニュースニュースニュースニュースニュースニュースニュースニュースニュース</p>
+          </li>
+          <li class="news__list--item">
+            <div class="news__list--item-SP">
+              <time datetime="2019-02-01" class="news__list--item-date">2019-02-01</time>
+              <p class="news__list--item-label">テキスト</p>
+            </div>
+            <p class="news__list--item-title">ニュースニュースニュースニュースニュースニュースニュース</p>
+          </li>
+          <li class="news__list--item">
+            <div class="news__list--item-SP">
+              <time datetime="2019-02-01" class="news__list--item-date">2019-02-01</time>
+              <p class="news__list--item-label">テキスト</p>
+            </div>
+            <p class="news__list--item-title">ニュースニュースニュースニュースニュースニュースニュース</p>
+          </li>
+          <!-- -----MORE分----- -->
+          <li class="news__list--item">
+            <div class="news__list--item-SP">
+              <time datetime="2019-02-01" class="news__list--item-date">2019-02-01</time>
+              <p class="news__list--item-label">テキスト</p>
+            </div>
+            <p class="news__list--item-title">ニュースニュースニュースニュースニュースニュースニュース</p>
+          </li>
+          <!-- -----MORE分----- -->
+        </ul>
+        <div class="link-btn-wrapper">
+          <button type="button" class="link-btn news__more">MORE</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- service -->
+    <section id="service" class="service">
+      <h2 class="heading-white service__heading">Service</h2>
+      <ul class="service__list">
+        <li class="service__list--item">
+          <img src="img/4-service/service1.svg" alt="WEB DESIGN image">
+          <h3 class="service-name">
+            <span>WEB</span><br><span>DESIGN</span>
+          </h3>
+          <p class="service-desp">どこへ越しても住みにくいと悟った時、詩が生れて、画が出来る。意地を通せば窮屈だ。</p>
+        </li>
+        <li class="service__list--item">
+          <img src="img/4-service/service2.svg" alt="WEB CODING image">
+          <h3 class="service-name">
+            <span>WEB</span><br><span>CODING</span>
+          </h3>
+          <p class="service-desp">どこへ越しても住みにくいと悟った時、詩が生れて、画が出来る。意地を通せば窮屈だ。</p>
+        </li>
+        <li class="service__list--item">
+          <img src="img/4-service/service3.svg" alt="CMS CUSTOMIZE image">
+          <h3 class="service-name">
+            <span>CMS</span><br><span>CUSTOMIZE</span>
+          </h3>
+          <p class="service-desp">どこへ越しても住みにくいと悟った時、詩が生れて、画が出来る。意地を通せば窮屈だ。</p>
+        </li>
+      </ul>
+    </section>
+
+    <!-- results -->
+    <section id="results" class="results">
+      <h2 class="heading-white">Results</h2>
+
+      <div class="slider-wrapper">
+        <div class="slider">
+          <img src="img/5-results/slide1.png" alt="slide1" class="slider-item">
+          <div class="slide-text">
+            <h3 class="slide-title">とかくに人の世は住みにくい。</h3>
+            <p class="slide-desp">どこへ越しても住みにくいと悟った時、詩が生れて、画が出来る。意地を通せば窮屈だ。</p>
+          </div>
+        </div>
+        <div class="slider">
+          <img src="img/5-results/slide1.png" alt="slide2" class="slider-item">
+          <div class="slide-text">
+            <h3 class="slide-title">とかくに人の世は住みにくい。</h3>
+            <p class="slide-desp">どこへ越しても住みにくいと悟った時、詩が生れて、画が出来る。意地を通せば窮屈だ。</p>
+          </div>
+        </div>
+        <div class="slider">
+          <img src="img/5-results/slide1.png" alt="slide3" class="slider-item">
+          <div class="slide-text">
+            <h3 class="slide-title">とかくに人の世は住みにくい。</h3>
+            <p class="slide-desp">どこへ越しても住みにくいと悟った時、詩が生れて、画が出来る。意地を通せば窮屈だ。</p>
+          </div>
+        </div>
+        <div class="slider">
+          <img src="img/5-results/slide1.png" alt="slide4" class="slider-item">
+          <div class="slide-text">
+            <h3 class="slide-title">とかくに人の世は住みにくい。</h3>
+            <p class="slide-desp">どこへ越しても住みにくいと悟った時、詩が生れて、画が出来る。意地を通せば窮屈だ。</p>
+          </div>
+        </div>
+        <div class="slider">
+          <img src="img/5-results/slide1.png" alt="slide5" class="slider-item">          <div class="slide-text">
+            <h3 class="slide-title">とかくに人の世は住みにくい。</h3>
+            <p class="slide-desp">どこへ越しても住みにくいと悟った時、詩が生れて、画が出来る。意地を通せば窮屈だ。</p>
+          </div>
+        </div>
+        <div class="slider">
+          <img src="img/5-results/slide1.png" alt="slide6" class="slider-item">
+          <div class="slide-text">
+            <h3 class="slide-title">とかくに人の世は住みにくい。</h3>
+            <p class="slide-desp">どこへ越しても住みにくいと悟った時、詩が生れて、画が出来る。意地を通せば窮屈だ。</p>
+          </div>
+        </div>
+      </div> <!-- slider-wrapper -->
+
+      <div class="link-btn-wrapper results__more-wrapper">
+        <button type="button" class="link-btn results__more">VIEW ALL</button>
+      </div>
+    </section>
+
+    <!-- price -->
+    <section id="price" class="price">
+      <h2 class="heading-black">Price</h2>
+        <table class="price-table">
+          <tr>
+            <th>row１</th>
+            <td>Price ￥10,000</td>
+          </tr> <!-- 1行目 -->
+          <tr>
+            <th>row２</th>
+            <td>Price ￥10,000</td>
+          </tr> <!-- 2行目 -->
+          <tr>
+            <th>row３</th>
+            <td>Price ￥10,000</td>
+          </tr> <!-- 3行目 -->
+        </table>
+        <p class="price-text">※ 上記料金はサンプルです。</p>
+    </section>
+
+    <!-- comments -->
+    <section id="comments" class="comments">
+      <div class="comments__flex-wrapper">
+        <div class="comments__wrapper">
+          <h2 class="heading-black comments__heading">Comments</h2>
+          <ul class="comments__list">
+            <li class="comments__list--item">
+              <img src="img/7-commnets/comments1.png" alt="woman" class="comment-img">
+              <p class="comment">どこへ越しても住みにくいと悟った時、詩が生れて、画が出来る。意地を通せば窮屈だ。どこへ越しても住みにくいと悟った時、詩が生れて、画が出来る。意地を通せば窮屈だ。</p>
+            </li>
+            <li class="comments__list--item">
+              <img src="img/7-commnets/comments2.png" alt="woman" class="comment-img">
+              <p class="comment">どこへ越しても住みにくいと悟った時、詩が生れて、画が出来る。意地を通せば窮屈だ。どこへ越しても住みにくいと悟った時、詩が生れて、画が出来る。意地を通せば窮屈だ。</p>
+            </li>
+          </ul>
+        </div>
+        <img src="img/7-commnets/comments3.png" alt="" class="comments-img-group">
+      </div>
+    </section>
+
+    <!-- q&a -->
+    <section id="faqs" class="faqs">
+      <!-- <img src="img/8-q&a/sunyu-kim-1053375-unsplash.png" alt="" class="faqs-back"> →.faqsにbackground指定にした -->
+      <div class="faqs__wrapper">
+        <h2 class="heading-black faqs__heading">Q&A</h2>
+        <ul class="faqs__list">
+          <li class="faqs__list--item">
+            <h3 class="faqs__q">質問質問質問？</h3>
+            <div class="faqs-a__wrapper">
+              <p class="faqs-a">
+                回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答
+              </p>
+            </div>
+          </li> <!-- faqs__list--item -->
+          <li class="faqs__list--item">
+            <h3 class="faqs__q">質問質問質問？<br>また、質問は質問質問？</h3>
+            <div class="faqs-a__wrapper">
+              <p class="faqs-a">
+                回答回答回答回答回答回答回答回答回答回答回答回答
+              </p>
+            </div>
+          </li> <!-- faqs__list--item -->
+          <li class="faqs__list--item">
+            <h3 class="faqs__q">質問質問質問？</h3>
+            <div class="faqs-a__wrapper">
+              <p class="faqs-a">
+                回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答
+              </p>
+            </div>
+          </li> <!-- faqs__list--item -->
+          <li class="faqs__list--item">
+            <h3 class="faqs__q">質問質問質問？</h3>
+            <div class="faqs-a__wrapper">
+              <p class="faqs-a">
+                回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答
+              </p>
+            </div>
+          </li> <!-- faqs__list--item -->
+          <li class="faqs__list--item">
+            <h3 class="faqs__q">質問質問質問？</h3>
+            <div class="faqs-a__wrapper">
+              <p class="faqs-a">
+                回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答
+              </p>
+            </div>
+          </li> <!-- faqs__list--item -->
+          <li class="faqs__list--item">
+            <h3 class="faqs__q">質問質問質問？</h3>
+            <div class="faqs-a__wrapper">
+              <p class="faqs-a">
+                回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答
+              </p>
+            </div>
+          </li> <!-- faqs__list--item -->
+        </ul>
+      </div>
+    </section>
+
+    <!-- access -->
+    <section id="access" class="access">
+      <div class="access__flex-wrapper"> <!-- PCカンプで横並びにするため -->
+        <div class="access-detail">
+          <h2 class="heading-white access__heading">Access</h2>
+          <p class="access__desp">
+            〒106-6126<br>
+            東京都港区六本木6丁目10-1<br>
+            六本木ヒルズ森タワー
+          </p>
+          <div class="link-btn-wrapper">
+              <a href="https://www.google.co.in/maps/place/Shivoham+Shiva+Temple/@12.9572934,77.6550278,17z/data=!4m8!1m2!2m1!1sBengaluru+shiva+temple!3m4!1s0x3bae13f778882c6f:0x14e38042a94c0cab!8m2!3d12.958333!4d77.656531" class="access__more access__more-pc">Google Maps</a>
+            </div>
+        </div>
+        <div class="access__map-wrapper">
+          <div class="access__map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3888.2274358831096!2d77.6550278!3d12.9572934!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae13f778882c6f%3A0x14e38042a94c0cab!2sShivoham%20Shiva%20Temple!5e0!3m2!1sja!2sin!4v1581504319099!5m2!1sja!2sin" width="720" height="515" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+          </div> <!-- access__map -->
+        </div>
+      </div>
+      <div class="link-btn-wrapper">
+        <a href="https://www.google.co.in/maps/place/Shivoham+Shiva+Temple/@12.9572934,77.6550278,17z/data=!4m8!1m2!2m1!1sBengaluru+shiva+temple!3m4!1s0x3bae13f778882c6f:0x14e38042a94c0cab!8m2!3d12.958333!4d77.656531" class="access__more access__more-sp">Google Maps</a>
+      </div>
+    </section>
+
+    <!-- contact -->
+    <section id="contact" class="contact">
+      <div class="contact__wrapper">
+        <div class="contact__wrapper--title">
+          <h2 class="contact__heading">Contact Us</h2>
+          <p class="contact__text">
+            どこへ越しても住みにくいと悟った時、詩が生まれて、画が出来る。
+          </p>
+        </div>
+        <div class="contact__wrapper--form">
+          <form action="abc.php" method="POST" class="contact-form"> <!-- エラー回避のためにaction部分は適当なファイル名を追加 -->
+
+            <div class="contact-form__type m-bottom contact__flex-wrapper">
+              <label for="type" class="contact-title">お問い合わせ種別</label>
+              <select id="type" name="type" class="select inputs-type" onchange="changeItem(this)"> <!-- selectの値が変更されたときに発動 -->
+                <option value="" disabled="disabled" selected class="no-select">選択してください</option>
+                <option value="toi1">問１</option>
+                <option value="toi2">問２</option>
+                <option value="toi3">問３</option>
+              </select>
+            </div> <!-- contact-form__type お問い合わせ種別 -->
+
+            <div class="contact-form__name m-bottom contact__flex-wrapper">
+              <div class="label__flex-wrapper-sp">
+                <label for="name" class="contact-title">氏名</label>
+                <span class="must-label">必須</span>
+                <input type="text" id="name-sp" placeholder="氏名" class="input-text inputs-text" required>
+              </div>
+              <div class="label__flex-wrapper-pc">
+                <label for="name" class="contact-title">氏名</label>
+                <div>
+                  <span class="must-label">必須</span>
+                  <input type="text" id="name-pc" placeholder="氏名" class="input-text inputs-text" required>
+                </div>
+              </div>
+            </div> <!-- contact-form__name 氏名 -->
+
+            <div class="contact-form__yomi m-bottom contact__flex-wrapper">
+              <div class="label__flex-wrapper-sp">
+                <label for="yomi" class="contact-title">フリガナ</label>
+                <span class="must-label">必須</span>
+                <input type="text" id="yomi-sp" placeholder="フリガナ" class="input-text inputs-text" required>
+              </div>
+              <div class="label__flex-wrapper-pc">
+                <label for="yomi" class="contact-title">フリガナ</label>
+                <div>
+                  <span class="must-label">必須</span>
+                  <input type="text" id="yomi-pc" placeholder="フリガナ" class="input-text inputs-text" required>
+                </div>
+              </div>
+            </div> <!-- contact-form__yomi フリガナ -->
+
+            <div class="contact-form__mail m-bottom contact__flex-wrapper">
+              <label for="mail" class="contact-title">メールアドレス</label>
+              <input type="email" id="mail" placeholder="sample@gmail.com" class="input-text inputs-text">
+            </div> <!-- contact-form__mail メールアドレス -->
+
+            <div class="contact-form__radio m-bottom contact__flex-wrapper">
+              <p class="contact-title-p">性別</p>
+              <div class="radio__flex-wrapper">
+                <label for="radio-men" class="radio-label">
+                  <input type="radio" id="radio-men" name="radio" value="radio-men" class="radio inputs-radio"><span>男性</span>
+                </label>
+                <label for="radio-women" class="radio-label">
+                  <input type="radio" id="radio-women" name="radio" value="radio-women" class="radio inputs-radio"><span>女性</span>
+                </label>
+              </div>
+            </div> <!-- contact-form__radio -->
+
+            <div class="contact-form__content">
+              <label for="content" class="contact-title contact-title-m">メッセージ</label>
+              <textarea name="content" id="content" class="textarea inputs-content" cols="30" rows="10"></textarea>
+            </div> <!-- contact-form__content メッセージ -->
+
+            <div class="contact-form__privacy">
+              <label>
+                <input type="checkbox" name="privacy-check" class="check inputs-checkbox"><span></span> <!-- チェックボックスのためのspan -->
+              </label>
+              <p class="privacy-text">
+                <a href="#" class="privacy-content">個人情報保護方針</a>に同意する
+              </p>
+            </div> <!-- contact-form__privacy -->
+
+            <div class="contact-form__button link-btn-wrapper">
+              <button type="submit" class="submit-button submit-btn">送信する</button>
+            </div> <!-- contact-form__button -->
+
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- footer -->
+    <footer class="footer">
+      <div class="footer__flex-wrapper">
+        <div class="footer__sns">
+          <a href="#" class="sns-link"><i class="fab fa-twitter sns-icon"></i></a>
+          <a href="#" class="sns-link"><i class="fab fa-facebook-square sns-icon"></i></a>
+        </div>
+        <ul class="footer__link">
+          <li class="footer__link--item"><a href="#" class="footer-link">サイトマップ</a></li>
+          <li class="footer__link--item"><a href="#" class="footer-link">個人情報保護方針</a></li>
+          <li class="footer__link--item"><a href="#" class="footer-link">プライバシーポリシー</a></li>
+        </ul>
+      </div>
+      <div class="footer__company">
+        <h2 class="footer__company--name">HANIWAMAN Corp.</h2>
+        <p class="cp-right"><small>© Haniwaman Landing page Sample.</small></p>
+      </div>
+      <a href="#site-top" class="footer__top-link"><img src="img/11-footer/totop.svg" alt="TOPリンク" class="footer__top-btn"></a>
+    </footer>
+
+  </div> <!-- wrap -->
+
+  <!-- jquery CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <!-- slick JS CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1/slick/slick.min.js"></script>
+  <!-- jquery -->
+  <script src="jquery/scroll_current.js"></script>
+  <script src="jquery/drawer.js"></script>
+  <script src="jquery/accordion.js"></script>
+  <script src="jquery/slider.js"></script>
+  <!-- javascript -->
+  <script src="javascript/formtype.js"></script>
+
+</body>
+</html>

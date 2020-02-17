@@ -1,0 +1,73 @@
+@charset "utf-8";
+
+// --------------------------------------------
+// fonts
+// placeholder-color
+// breakpoint
+// --------------------------------------------
+
+// fonts---------------------------------------
+
+@mixin font ($fontSize, $lineHight, $color, $marginBottom) {
+  font-size: $fontSize;
+  line-height: $lineHight;
+  color: $color;
+  margin-bottom: $marginBottom;
+}
+
+// font----------------------------------------
+
+// placeholder-color---------------------------
+
+@mixin placeholder {
+  &::placeholder {
+    @include font(1.6rem, 2.3rem, $color-b-text, 0);
+    @include mqPC {
+      @include font(2.2rem, 2.25rem, $color-b-text, 0);
+    }
+  }
+  // IEだけは↓にまとめると反映されないので分ける
+  &:-ms-input-placeholder {
+    @include font(1.6rem, 2.3rem, $color-b-text, 0);
+    @include mqPC {
+      @include font(2.2rem, 2.25rem, $color-b-text, 0);
+    }
+  }
+  // webkit系、moz系、Edge
+  &::-webkit-input-placeholder,
+  &:-moz-placeholder,
+  &::-moz-placeholder,
+  &::-ms-input-placeholder {
+    @include font(1.6rem, 2.3rem, $color-b-text, 0);
+    @include mqPC {
+      @include font(2.2rem, 2.25rem, $color-b-text, 0);
+    }
+  }
+}
+
+// placeholder-color---------------------------
+
+// breakpoint----------------------------------
+
+@mixin mqSP {
+  @media #{map-get($breakpoints, sp)}{
+    @content;
+  }
+}
+@mixin mqTAB {
+  @media #{map-get($breakpoints, tab)}{
+    @content;
+  }
+}
+@mixin mqTAB-MORE {
+  @media #{map-get($breakpoints, tab-more)}{
+    @content;
+  }
+}
+@mixin mqPC {
+  @media #{map-get($breakpoints, pc)}{
+    @content;
+  }
+}
+
+// breakpoint----------------------------------

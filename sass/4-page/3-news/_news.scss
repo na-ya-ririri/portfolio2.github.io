@@ -1,0 +1,60 @@
+// @charset "utf-8";
+
+
+// .news {
+//   background: $color-key1c;
+//   padding: 0 16px;
+//   .inner {
+//     background: $color-key3w;
+//     padding: 60px 0;
+//     box-shadow: 0px 5px 12px $color-shadow;
+//   } //.inner
+//   &__list {
+//     &--item {
+//       padding: 13px 47px 16px 16px;
+//       border-bottom: 1px solid $color-border;
+//       &:first-child {
+//         border-top: 1px solid $color-border;
+//       }
+//       &:nth-child(n + 4) {
+//         display: none; /* jsで「MORE」クリックで表示 */
+//       }
+//       &-SP {
+//         display: flex;
+//         margin-bottom: 10px;
+//         .news__list--item-date {
+//           @include font(1.4rem, 2.6rem, $color-black, 0);
+//           letter-spacing: 0.35px;
+//           margin-right: 20px;
+//         }
+//         .news__list--item-label {
+//           @include font(1.2rem, 2.6rem, $color-black, 0);
+//           letter-spacing: 0.3px;
+//           display: flex;
+//           justify-content: center;
+//           align-items: center;;
+//           width: 89px;
+//           height: 24px;
+//           border: 2px solid $color-label;
+//           border-radius: 50px;
+//         }
+//       } //.news__list--item-SP
+//       .news__list--item-title {
+//         @include font(1.4rem, 2.2rem, $color-black, 0);
+//         letter-spacing: -0.35px;
+//       }
+//     } //.news__list--item
+//   } //.news__list
+//   &__more-wrapper {
+//     text-align: center;
+//     .news__more {
+//       display: inline-block;
+//       @include font(1.8rem, 2.25rem, $color-black, 0);
+//       letter-spacing: 3.6px;
+//       padding: 16px 121.5px;
+//       width: 311px;
+//       height: 54px;
+//       border: 1px solid $color-link-border;
+//     }
+//   } //.news__more-wrapper
+// } //.news

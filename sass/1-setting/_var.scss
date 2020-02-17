@@ -1,0 +1,68 @@
+@charset "utf-8";
+
+
+// --------------------------------------------
+// color
+// breakpoint
+// --------------------------------------------
+
+// color---------------------------------------
+// font
+$color-black: #3E3E3E;
+$color-white: #FFFFFF;
+
+// key-color
+$color-key1c: #F3F3F3;
+$color-key2b: #3E3E3E;
+$color-key3w: #FFFFFF;
+$color-key4o: #FFAA3B;
+$color-key5bl: #4973FF;
+$color-key6r: #FF4646;
+
+// button-hover
+$color-b-hover: #F18900;
+
+// 1-header
+$color-drawer: rgba(62, 62, 62, 0.5);
+$color-nav: #F4F4F5;
+$color-global: #C5C7CE;
+// 3-news
+$color-label: #3B69FF;
+$color-border: #CECDCD;
+$color-shadow: #D8D8D8;
+$color-link-border: #707070;
+$color-n-hover: #ECF0FF;
+// 6-price
+$color-table-border: #707070;
+// 7-comments
+$color-com-shadow: #D6D6D6;
+// 8-q&a
+$color-faqs-a: #D7E1FF;
+$color-faqs-q: #3B69FF;
+// 9-access
+$color-m-shadow: #D8D8D8;
+// 10-contact
+$color-c-shadow: #D6D6D6;
+$color-c-shadow2: #CCCCCC;
+$color-c-border: #707070;
+$color-radio: #3B69FF;
+$color-check: #3B69FF;
+$color-c-hover: #3B69FF;
+$color-b-text: #989898;
+// 11-footer
+$color-footer: #E3E3E3;
+
+// color---------------------------------------
+
+// breakpoint----------------------------------
+
+$layout-width-inner: 1180px;
+$breakpoints: (
+  "xs":"screen and (max-width: 321px)",
+  "sp":"screen and (max-width: 767px)",
+  "tab":"screen and (min-width: 768px) and (max-width: #{$layout-width-inner - 1px})",
+  "tab-more":"screen and (min-width: 768px)",
+  "pc":"screen and (min-width: #{$layout-width-inner})"
+)!default;
+
+// breakpoint----------------------------------
